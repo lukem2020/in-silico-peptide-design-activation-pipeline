@@ -1,0 +1,2 @@
+variant_id,receptor_pdb,ligand_fasta
+GRK6_variant_0001,C:\Users\User\Desktop\Personal\github\projects\insilico-peptide-design-activation-pipeline\in-silico-peptide-design-activation-pipeline\data\P43250_receptor_clean.pdb,C:\Users\User\Desktop\Personal\github\projects\insilico-peptide-design-activation-pipeline\in-silico-peptide-design-activation-pipeline\data\docking\GRK6_variant_0001\ligand.fasta

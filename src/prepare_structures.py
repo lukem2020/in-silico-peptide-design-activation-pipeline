@@ -133,15 +133,14 @@ def add_missing_atoms(input_pdb, output_pdb):
                     if resname not in PDB.Polypeptide.standard_aa_names:
                         continue
                     
-                    # Get expected atoms for this residue type
-                    expected_atoms = set(PDB.Polypeptide.aa3_to_aa1.get(resname, []))
-                    
-                    # Check which atoms are present
+                    # Note: Full missing atom detection would require:
+                    # - Standard atom name dictionaries per residue type
+                    # - Side chain reconstruction logic
+                    # - External tools like MODELLER or ChimeraX
+                    # For now, we just verify the residue exists and has atoms
                     present_atoms = {atom.get_id() for atom in residue}
-                    
-                    # Note: This is a simplified check
-                    # Full implementation would require knowledge of standard atom names
-                    # and potentially side chain reconstruction
+                    if len(present_atoms) == 0:
+                        missing_atoms.append(f"{resname} at {residue.id}")
         
         logging.info("Missing atoms check completed")
         logging.warning("Note: Full atom reconstruction requires external tools (MODELLER, ChimeraX)")
